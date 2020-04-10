@@ -8,16 +8,30 @@ import java.util.Iterator;
  * create by Administrator : zhanghechun on 2020/4/10
  */
 public class Flock implements Quackable {
-    ArrayList quacks=new ArrayList();
-    void add(Quackable quack){
-        quacks.add(quack);
+    ArrayList  ducks=new ArrayList();
+
+    void add(Quackable duck){
+        ducks.add(duck);
     }
     @Override
     public void quack() {
-        Iterator iterator = quacks.iterator();
+        Iterator iterator = ducks.iterator();
         while (iterator.hasNext()){
             Quackable quackable= (Quackable) iterator.next();
             quackable.quack();
         }
     }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        System.out.println("***"+ducks.size());
+        Iterator iterator=ducks.iterator();
+        while (iterator.hasNext()){
+            Quackable duck= (Quackable) iterator.next();
+            duck.registerObserver(observer);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {}
 }

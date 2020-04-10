@@ -8,4 +8,14 @@ public class DuckCall implements Quackable {
     public void quack() {
         System.out.println("kwak");
     }
+
+    @Override
+    public void registerObserver(Observer observer) {
+
+    }
+
+    @Override
+    public void notifyObservers() {
+
+    }
 }

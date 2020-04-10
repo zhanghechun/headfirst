@@ -9,4 +9,14 @@ public class RedheadDuck implements Quackable {
     public void quack() {
         System.out.println("quack");
     }
+
+    @Override
+    public void registerObserver(Observer observer) {
+
+    }
+
+    @Override
+    public void notifyObservers() {
+
+    }
 }
